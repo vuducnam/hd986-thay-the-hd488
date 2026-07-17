@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Điểm mới HD986 so với HD488</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#B01228; --red-soft:#f3dfe2; --ink:#1c1a17; --ink-2:#55504a;
+  --paper:#faf6ef; --card:#ffffff; --line:#e7e0d4; --gold:#9a7b2e; --gold-soft:#f1e7cf;
+  --shadow:0 1px 2px rgba(28,26,23,.06), 0 8px 24px -12px rgba(28,26,23,.18);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Be Vietnam Pro","Segoe UI",Tahoma,Arial,sans-serif;
+  background:var(--paper);color:var(--ink);line-height:1.5;font-size:16px;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px 64px}
+header.top{position:sticky;top:0;z-index:50;
+  background:linear-gradient(180deg,var(--paper) 70%,rgba(250,246,239,.0));
+  padding-top:env(safe-area-inset-top)}
+.brand{display:flex;align-items:center;gap:10px;padding:16px 14px 10px;max-width:760px;margin:0 auto}
+.brand .star{width:34px;height:34px;flex:none;border-radius:8px;background:var(--red);
+  color:#fff;display:grid;place-items:center;font-size:18px;box-shadow:var(--shadow)}
+.brand h1{font-family:"Be Vietnam Pro",sans-serif;font-size:18px;font-weight:700;margin:0;letter-spacing:.2px}
+.brand p{margin:0;font-size:11.5px;color:var(--ink-2);font-weight:500}
+.searchbox{padding:0 14px 8px;max-width:760px;margin:0 auto}
+.searchbox .field{display:flex;align-items:center;gap:8px;background:var(--card);
+  border:1.5px solid var(--line);border-radius:13px;padding:11px 13px;box-shadow:var(--shadow)}
+.searchbox input{border:0;outline:0;width:100%;font:inherit;font-size:16px;background:transparent;color:var(--ink)}
+.searchbox svg{flex:none;color:var(--ink-2)}
+.clearbtn{border:0;background:var(--line);color:var(--ink-2);border-radius:50%;width:22px;height:22px;font-size:14px;line-height:1;cursor:pointer;flex:none;display:none}
+.clearbtn.show{display:block}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 6px}
+.chip{font-size:11.5px;font-weight:600;background:var(--red-soft);color:var(--red);padding:4px 10px;border-radius:999px}
+.chip.gray{background:#eee9df;color:var(--ink-2)}
+.legend{display:flex;gap:14px;margin:2px 2px 14px;font-size:12px;color:var(--ink-2);flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+.dot.moi{background:var(--red)} .dot.khac{background:var(--gold)}
+
+.grouphead{font-family:"Be Vietnam Pro",sans-serif;font-size:12.5px;font-weight:700;color:var(--gold);
+  text-transform:uppercase;letter-spacing:1.5px;margin:22px 2px 9px}
+.grouphead:first-of-type{margin-top:4px}
+
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;
+  margin-bottom:9px;overflow:hidden;box-shadow:var(--shadow)}
+.card>button.head{width:100%;border:0;background:transparent;text-align:left;cursor:pointer;
+  padding:13px 15px;display:flex;gap:10px;align-items:flex-start;font:inherit}
+.badge{flex:none;font-size:10px;font-weight:700;letter-spacing:.5px;padding:3px 7px;border-radius:6px;margin-top:1px;color:#fff}
+.badge.moi{background:var(--red)} .badge.khac{background:var(--gold)}
+.htext{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.htext .t{font-weight:600;font-size:15px;color:var(--ink);line-height:1.35}
+.htext .s{font-size:13px;color:var(--ink-2);line-height:1.4}
+.chev{flex:none;color:var(--ink-2);transition:transform .2s;margin-top:3px}
+.card.open .chev{transform:rotate(180deg)}
+.body{display:none;padding:0 15px 15px;animation:fade .2s ease}
+.card.open .body{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(-3px)}to{opacity:1}}
+
+.cmp{display:flex;flex-direction:column;gap:8px}
+.cmp .row{border-radius:10px;padding:9px 12px;font-size:14px;line-height:1.45}
+.cmp .old{background:#f1ece2;border:1px solid var(--line)}
+.cmp .new{background:var(--red-soft);border:1px solid #e7c9ce}
+.cmp .lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.4px;margin-bottom:3px;text-transform:uppercase}
+.cmp .old .lbl{color:var(--ink-2)} .cmp .new .lbl{color:var(--red)}
+.note{margin-top:9px;font-size:13px;color:var(--ink-2);background:var(--gold-soft);
+  border-radius:9px;padding:8px 11px;line-height:1.45}
+.note b{color:var(--ink)}
+.kbd{font-family:"Be Vietnam Pro",sans-serif;font-weight:600;background:#fff;border:1px solid var(--line);
+  padding:1px 6px;border-radius:5px;font-size:13px;color:var(--ink);white-space:nowrap}
+.empty{text-align:center;color:var(--ink-2);padding:48px 20px;font-size:14.5px}
+.empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+mark{background:#ffe9a8;color:inherit;padding:0 1px;border-radius:3px}
+.footer{text-align:center;font-size:11.5px;color:var(--ink-2);margin-top:26px;line-height:1.6}
+.footer a{color:var(--red);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <div class="star">★</div>
+    <div>
+      <h1>Điểm mới HD986 so với HD488</h1>
+      <p>Những thay đổi chính khi HD986 thay thế HD488 — HVCTQGHCM</p>
+    </div>
+  </div>
+  <div class="searchbox">
+    <div class="field">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" inputmode="search" placeholder="Tìm: năm dương lịch, ký số, QĐi, giáp lai, Kính trình…" autocomplete="off">
+      <button class="clearbtn" id="clear" aria-label="Xóa">×</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="main"></main>
+
+<script>
+const META = ['HD 986-HD/HVCTQGHCM (14/7/2026)','Thay HD 488-HD/HVCTQG (18/10/2018)'];
+const GROUPS = [
+{ name:'Căn cứ, phạm vi, trách nhiệm', items:[
+  { tag:'KHÁC', t:'Căn cứ ban hành đổi toàn bộ', s:'QĐ 145 / QĐ 66 / HD 36 đổi thành QĐ 214 / QĐ 399 / HD 05',
+    old:'Thực hiện QĐ số 145-QĐ/TW (08-8-2018) của Bộ Chính trị; căn cứ QĐ số 66-QĐ/TW (06-02-2017) của Ban Bí thư; căn cứ HD số 36-HD/VPTW (03-4-2018) của Văn phòng Trung ương Đảng.',
+    new:'Căn cứ QĐ số 214-QĐ/TW (28/12/2024) của Bộ Chính trị; QĐ số 399-QĐ/TW (09/01/2026) của Ban Bí thư; HD số 05-HD/VPTW (27/5/2026) của Văn phòng Trung ương Đảng.',
+    k:'can cu ban hanh 145 66 36 214 399 05 bo chinh tri ban bi thu vptw'},
+  { tag:'KHÁC', t:'Phạm vi điều chỉnh', s:'Từ "văn bản có lấy số, đóng dấu" thành "văn bản giấy và điện tử"',
+    old:'Điều chỉnh các văn bản có lấy số và đóng dấu của Học viện và đơn vị trực thuộc; văn bản đặc thù (văn bằng, chứng chỉ, hợp đồng…) theo pháp luật và quy định của Giám đốc Học viện.',
+    new:'Điều chỉnh văn bản giấy và văn bản điện tử của Học viện và đơn vị trực thuộc; văn bản mật theo pháp luật bảo vệ bí mật nhà nước; không điều chỉnh văn bản chuyên ngành, văn bản in thành sách và ấn phẩm khác.',
+    k:'pham vi dieu chinh lay so dong dau giay dien tu van bang chung chi hop dong chuyen nganh an pham bi mat'},
+  { tag:'KHÁC', t:'Yêu cầu', s:'Bỏ vế "bảo đảm giá trị pháp lý và giá trị thực tiễn"',
+    old:'Văn bản phải thống nhất thể thức và kỹ thuật trình bày để bảo đảm giá trị pháp lý và giá trị thực tiễn.',
+    new:'Văn bản chính thức của Học viện và các đơn vị trực thuộc phải thống nhất về thể thức và kỹ thuật trình bày.',
+    k:'yeu cau thong nhat gia tri phap ly thuc tien'},
+  { tag:'MỚI', t:'Thêm trách nhiệm thẩm định của Chánh Văn phòng', s:'4 nhóm trách nhiệm thay vì 3',
+    old:'3 nhóm: người ký (chịu trách nhiệm về nội dung và thể thức, kỹ thuật); người được giao soạn thảo; văn thư kiểm tra trước khi trình ký, phát hành.',
+    new:'Thêm nhóm thứ 4: Chánh Văn phòng hoặc người được giao phụ trách công tác văn phòng chịu trách nhiệm thẩm định thể thức và kỹ thuật trình bày; người ký chịu trách nhiệm về thể thức và kỹ thuật trình bày.',
+    k:'trach nhiem chanh van phong tham dinh nguoi ky soan thao van thu'},
+]},
+{ name:'Số, ký hiệu, địa danh, tên loại', items:[
+  { tag:'MỚI', t:'Số văn bản đánh theo năm dương lịch', s:'Từ 01 cho mỗi tên loại, 01/01 đến 31/12 hằng năm',
+    old:'Chỉ nêu: số văn bản là số thứ tự đăng ký, quản lý tại văn thư Học viện (không quy định chu kỳ đánh số).',
+    new:'Ghi liên tục từ số 01 cho mỗi tên loại theo năm dương lịch (bắt đầu 01/01, kết thúc 31/12); số văn bản mật ghi liên tục với số không mật cùng tên loại; số của liên cơ quan ghi liên tục theo cơ quan chủ trì.',
+    k:'so van ban nam duong lich 01 01/01 31/12 mat lien co quan chu tri'},
+  { tag:'KHÁC', t:'Ký hiệu "Chương trình" và "Quy định"', s:'CT thành CTr; QĐi thành QĐ (dùng chung với Quyết định)',
+    old:'Bảng 13 ký hiệu (Phụ lục 01): Chương trình: <span class="kbd">CT</span> · Quy định: <span class="kbd">QĐi</span> · Quyết định: <span class="kbd">QĐ</span>.',
+    new:'Quy tắc chữ cái đầu các âm tiết; trùng nhau thì thống nhất: Quyết định, Quy định: <span class="kbd">QĐ</span> · Chương trình: <span class="kbd">CTr</span> · Tờ trình: <span class="kbd">TTr</span>.',
+    note:'Ví dụ mới: Số 23-QĐ/HVCTQGHCM · Số 06-CV/VPHV · liên cơ quan Số 05-QC/HVCTQGHCM-UBKTTW.',
+    k:'ky hieu chuong trinh quy dinh ct ctr qdi qd ttr phu luc 01'},
+  { tag:'KHÁC', t:'Vị trí địa danh và ngày, tháng, năm', s:'Từ "cùng dòng với số và ký hiệu" thành "cân đối dưới tiêu đề"',
+    old:'Địa danh và ngày, tháng, năm trình bày cùng dòng với số và ký hiệu văn bản.',
+    new:'Trình bày cân đối dưới tiêu đề "Đảng Cộng sản Việt Nam" (ô số 4, Phụ lục 1); thêm quy tắc: địa danh mang tên người hoặc một âm tiết thì thêm cấp hành chính phía trước (Thành phố Huế), cấp hành chính có thể viết tắt (TP).',
+    k:'dia danh ngay thang nam cung dong can doi duoi tieu de thanh pho hue tp mot am tiet'},
+  { tag:'MỚI', t:'Cấm lồng ghép loại văn bản; tác giả trong trích yếu', s:'Không "Quyết định ban hành quy chế…"',
+    old:'Trích yếu là câu ngắn gọn hoặc một cụm từ phản ánh nội dung chủ yếu (không có quy định về lồng ghép).',
+    new:'Không lồng ghép loại văn bản này trong loại văn bản khác (ví dụ: Quyết định ban hành quy chế…; Thông báo ban hành kế hoạch…); trích yếu là cụm từ ngắn gọn, một số văn bản có thể ghi tác giả vào trích yếu.',
+    k:'long ghep loai van ban trich yeu tac gia quyet dinh ban hanh quy che'},
+]},
+{ name:'Nội dung và trình bày', items:[
+  { tag:'KHÁC', t:'Khoảng cách dòng (Line spacing)', s:'Từ "tối thiểu 18pt" thành "18pt đến 22pt"',
+    old:'Khoảng cách giữa các dòng (Line spacing) tối thiểu là 18pt (Exactly).',
+    new:'Khoảng cách giữa các dòng (Line spacing) từ 18pt đến 22pt (Exactly).',
+    note:'Spacing giữa các đoạn vẫn tối thiểu 6pt; lùi đầu dòng vẫn khoảng 10 mm; định lề 20-20-30-15 mm không đổi.',
+    k:'line spacing 18 22 pt exactly 6pt 10mm'},
+  { tag:'KHÁC', t:'Dấu cuối phần căn cứ ban hành', s:'Căn cứ cuối cùng: dấu phẩy (,) đổi thành dấu chấm (.)',
+    old:'Mỗi căn cứ một dòng, cuối dòng có dấu chấm phẩy (;), riêng căn cứ cuối cùng có dấu phẩy (,).',
+    new:'Mỗi căn cứ một dòng hoặc một khổ riêng, sau mỗi căn cứ có dấu chấm phẩy (;), riêng căn cứ cuối cùng có dấu chấm (.); riêng luật, pháp lệnh khi viện dẫn ghi tên luật, pháp lệnh và năm ban hành.',
+    k:'can cu dau phay dau cham luat phap lenh nam ban hanh'},
+  { tag:'KHÁC', t:'Nơi nhận: vị trí và dấu câu', s:'Dấu phẩy giữa các nơi nhận đổi thành dấu chấm phẩy',
+    old:'Thân văn bản ghi "Nơi nhận trình bày góc phải" (trong khi 11 mẫu kèm theo đều đặt góc trái); sau mỗi cơ quan, cá nhân nhận văn bản có dấu phẩy (,).',
+    new:'Nơi nhận trình bày góc trái, dưới nội dung văn bản (ô số 9a, Phụ lục 1); sau mỗi tổ chức, cá nhân nhận văn bản có dấu chấm phẩy (;); kết thúc nơi lưu có dấu chấm (.).',
+    note:'Mâu thuẫn "góc phải/góc trái" là nội tại của HD488 — ghi trung thực theo cả thân văn bản lẫn mẫu kèm theo.',
+    k:'noi nhan goc phai goc trai dau phay cham phay ket thuc luu'},
+  { tag:'MỚI', t:'Từ "Kính trình" riêng cho tờ trình', s:'HD488 dùng chung "Kính gửi" cho công văn và tờ trình',
+    old:'Tờ trình và công văn đều trình bày thêm từ "Kính gửi" và tên nơi nhận trực tiếp.',
+    new:'Tờ trình dùng từ "Kính trình" riêng, liệt kê nơi nhận trực tiếp dưới tên loại và trích yếu (ô số 9b, Phụ lục 1); công văn giữ "Kính gửi" ở chính giữa trang đầu; dòng đầu "Nơi nhận" cuối văn bản vẫn thêm "Như trên".',
+    k:'kinh trinh kinh gui to trinh cong van nhu tren o 9b'},
+  { tag:'KHÁC', t:'Chức vụ, họ tên người ký', s:'Thêm "quân hàm" vào danh mục cấm; cấm ghi tên cơ quan kèm chức vụ',
+    old:'Ghi đầy đủ họ tên; không ghi học hàm, học vị, danh hiệu… trước họ tên người ký.',
+    new:'Không ghi học hàm, học vị, quân hàm, danh hiệu… trước họ tên; thêm: không ghi tên cơ quan, đơn vị kèm theo chức vụ người ký (trừ đơn vị không có con dấu riêng và văn bản liên cơ quan).',
+    k:'hoc ham hoc vi quan ham danh hieu chuc vu ten co quan kem theo'},
+]},
+{ name:'Chữ ký, chữ ký số và dấu (điểm mới lớn)', items:[
+  { tag:'MỚI', t:'Mực xanh và chữ ký trên văn bản điện tử', s:'Chữ ký điện tử màu xanh, .png nền trong suốt',
+    old:'Chỉ quy định chữ ký giấy: không dùng bút chì, bút màu đỏ, màu nhạt, mực dễ phai (không nêu mực xanh, không có chữ ký điện tử).',
+    new:'Chữ ký giấy bằng bút mực màu xanh; chữ ký trên văn bản điện tử màu xanh, định dạng .png nền trong suốt, đặt căn giữa chức vụ và họ tên người ký.',
+    k:'muc xanh chu ky dien tu png nen trong suot but chi muc do'},
+  { tag:'MỚI', t:'Chữ ký số của cơ quan, đơn vị', s:'Hình ảnh dấu màu đỏ, kích thước bằng thực tế, .png',
+    old:'Chỉ quy định dấu trên văn bản giấy: mực đỏ tươi, trùm 1/3 chữ ký về bên trái.',
+    new:'Bổ sung chữ ký số của cơ quan: hình ảnh dấu của cơ quan, màu đỏ, kích thước bằng kích thước thực tế của con dấu, định dạng .png nền trong suốt.',
+    k:'chu ky so co quan hinh anh dau kich thuoc thuc te png'},
+  { tag:'MỚI', t:'Xác nhận chữ ký chủ trì biên bản hội nghị', s:'Trường hợp không được đóng dấu lên chữ ký',
+    old:'Biên bản chỉ có quy tắc: người chịu trách nhiệm chính bên phải, người tham gia khác bên trái.',
+    new:'Thêm: nếu không được đóng dấu lên chữ ký của người chủ trì hội nghị thì lãnh đạo văn phòng thừa lệnh thủ trưởng xác nhận chữ ký ("Xác nhận chữ ký của đồng chí…" + T/L GIÁM ĐỐC / CHÁNH VĂN PHÒNG).',
+    k:'bien ban hoi nghi xac nhan chu ky chu tri thua lenh'},
+  { tag:'KHÁC', t:'Dấu giáp lai', s:'Bỏ quy định bắt buộc đóng giáp lai cho văn bản từ 02 trang',
+    old:'Văn bản từ 02 trang trở lên PHẢI đóng dấu giáp lai (văn bản và phụ lục); giáp lai văn bản khác do người ký quyết định; mỗi khuôn tối đa 5 tờ.',
+    new:'Dấu treo, giáp lai, nổi, ướt, thu nhỏ… thực hiện "theo quy định"; giáp lai đóng vào khoảng giữa mép phải các trang trong từng phụ lục; mỗi khuôn vẫn tối đa 5 tờ — không còn câu bắt buộc từ 02 trang cho văn bản chính.',
+    k:'giap lai 02 trang bat buoc phu luc 5 to dau treo dau noi dau uot'},
+]},
+{ name:'Thành phần bổ sung và bản sao', items:[
+  { tag:'MỚI', t:'Quy định chi tiết 6 thành phần bổ sung', s:'HD488 chỉ dẫn chiếu HD36; HD986 quy định trực tiếp',
+    old:'Các phần thể thức bổ sung: đơn vị thực hiện theo Hướng dẫn 36-HD/VPTW (1 câu dẫn chiếu, không quy định chi tiết).',
+    new:'Quy định trực tiếp: phụ lục; dấu mật; dấu khẩn (Khẩn, thượng khẩn, hoả tốc — ô 10); chỉ dẫn phạm vi phổ biến (ô 11a, cách mép trên 10 mm; riêng "Không phổ biến trên phương tiện thông tin đại chúng" ở trang cuối, chính giữa, cách mép dưới 10 mm); chỉ dẫn dự thảo (ô 11b); ký hiệu người soạn thảo + số lượng bản (ô 12); thông tin liên hệ (ô 13, cỡ 10).',
+    k:'bo sung dan chieu hd36 dau mat khan thuong khan hoa toc pham vi pho bien du thao lien he o 10 11 12 13'},
+  { tag:'MỚI', t:'Bản sao văn bản và sao điện tử', s:'3 chiều sao + dấu "Bản sao văn bản" + ký số (ô 14, 15)',
+    old:'Bản sao và thành phần thể thức bản sao: thực hiện theo Hướng dẫn 36-HD/VPTW.',
+    new:'Quy định trực tiếp: sao giấy sang giấy, giấy sang điện tử, điện tử sang giấy; dấu "Bản sao văn bản" bên trái dưới nơi nhận, phần ký của người sao bên phải, dấu trùm 1/3 chữ ký người sao; sao điện tử = số hoá (scan) + ký số của người có thẩm quyền + ký số của cơ quan (ô 14, 15 — góc trên bên phải trang đầu).',
+    k:'ban sao van ban sao dien tu so hoa scan ky so o 14 15 trum 1/3'},
+  { tag:'KHÁC', t:'"Người đánh máy" thành "người soạn thảo", cỡ chữ 11', s:'ABC-xxx đổi thành NguyenVanAn-26',
+    old:'Ghi chú các mẫu: "Lưu: VT,…, ABC-xxx" — ký hiệu người đánh máy, nhân bản và số lượng bản phát hành (nếu cần).',
+    new:'Gọi là "ký hiệu người soạn thảo văn bản và số lượng bản phát hành", trình bày cuối nơi nhận (ô 12), in thường, đứng, cỡ chữ 11; ví dụ: NguyenVanAn-26.',
+    k:'nguoi danh may nguoi soan thao abc-xxx nguyenvanan co chu 11 so luong ban'},
+]},
+{ name:'Phông chữ, số trang, phụ lục', items:[
+  { tag:'KHÁC', t:'Phông chữ ghi rõ trong thân văn bản', s:'Times New Roman + màu đen vào quy định chính',
+    old:'Thân văn bản chỉ ghi: bộ mã các ký tự chữ Việt theo TCVN 6909:2001 (Times New Roman chỉ xuất hiện ở ghi chú các mẫu).',
+    new:'Thân văn bản ghi rõ: phông chữ tiếng Việt, kiểu chữ Times New Roman, bộ mã Unicode TCVN 6909:2001, màu đen.',
+    k:'phong chu times new roman tcvn 6909 mau den'},
+  { tag:'KHÁC', t:'Số trang văn bản và phụ lục', s:'Bỏ điều kiện "từ 02 trang"; phụ lục đánh số riêng',
+    old:'Văn bản có hai trang trở lên phải ghi số trang; không đánh số trang thứ nhất.',
+    new:'Không còn điều kiện 02 trang; bổ sung: số trang của phụ lục ghi riêng cho từng phụ lục; vị trí giữ nguyên (điểm giữa, cách mép trên 10 mm, ẩn trang 1).',
+    k:'so trang 02 trang phu luc ghi rieng 10 mm an trang 1'},
+  { tag:'KHÁC', t:'Chỉ dẫn kèm theo dưới tiêu đề phụ lục', s:'Thêm số, ký hiệu, ngày, cơ quan ban hành',
+    old:'Phụ lục trình bày trang riêng; "Phụ lục" + số thứ tự một dòng riêng chính giữa; tiêu đề dưới.',
+    new:'Thêm: dưới tiêu đề phụ lục trình bày chỉ dẫn phụ lục kèm theo văn bản gồm số, ký hiệu văn bản; ngày, tháng, năm ban hành và tên cơ quan, đơn vị ban hành.',
+    k:'phu luc chi dan kem theo so ky hieu ngay co quan'},
+]},
+{ name:'Bảng viết tắt đơn vị và mẫu văn bản', items:[
+  { tag:'KHÁC', t:'Đổi gần như toàn bộ chữ viết tắt đơn vị', s:'34 đơn vị (2018) thành 33 đơn vị (2026), Viện thêm tiền tố V',
+    old:'34 đơn vị, ký hiệu ngắn: <span class="kbd">HVCTQG</span> · <span class="kbd">TCCB</span> · <span class="kbd">QLĐT</span> · <span class="kbd">VP</span> · <span class="kbd">TrH</span> · <span class="kbd">TCLL</span> · <span class="kbd">NXB</span> · <span class="kbd">HVCTKV I</span> (có khoảng trắng)…',
+    new:'33 đơn vị, ký hiệu mới: <span class="kbd">HVCTQGHCM</span> · <span class="kbd">VTCCB</span> · <span class="kbd">VQLĐTBD</span> · <span class="kbd">VPHV</span> · <span class="kbd">VTrH</span> · <span class="kbd">VTCLLCT</span> · <span class="kbd">VNXBLLCT</span> · <span class="kbd">HVCTKVI</span> (viết liền)… — các Viện thêm tiền tố V.',
+    note:'Tra đầy đủ 2 bảng tại trang <b>tra-cuu-hd488</b> (Phụ lục 02) và <b>tra-cuu-hd986</b> (Phụ lục 3).',
+    k:'chu viet tat don vi hvctqg hvctqghcm tccb vtccb qldt vqldtbd vp vphv trh vtrh tcll nxb hvctkv tien to v'},
+  { tag:'KHÁC', t:'Tổ chức bộ máy trong danh mục đơn vị', s:'Nhiều đơn vị đổi tên, sáp nhập, thêm mới',
+    old:'2018: có Ban Thanh tra (BTTr), TT Ứng dụng công nghệ thông tin (CNTT), Viện Kinh tế (KT), Viện Chính trị học (CTH), Viện Quan hệ quốc tế (QHQT), Viện Xã hội học và phát triển (XHH), Viện Tôn giáo và tín ngưỡng (TG), Viện Lãnh đạo học và Chính sách công (LĐH).',
+    new:'2026: không còn các đơn vị trên; có TT Công nghệ và Chuyển đổi số (TTCNCĐS), Ban Công tác Đảng – Đoàn thể (BCTĐĐT), Viện Kinh tế - Xã hội và Môi trường (VKTXHMT), Viện Chính trị và Quan hệ quốc tế (VCTQHQT), Viện Dân tộc và Tôn giáo (VDTTG), Viện Lãnh đạo học và Hành chính công (VLĐHHCC), Học viện Hành chính và Quản trị công (HVHCQTC).',
+    k:'ban thanh tra vien kinh te chinh tri hoc quan he quoc te xa hoi hoc ton giao lanh dao hoc chinh sach cong hanh chinh cong chuyen doi so doan the'},
+  { tag:'KHÁC', t:'Bộ mẫu văn bản kèm theo', s:'11 mẫu (2018) thành 10 mẫu (2026)',
+    old:'11 mẫu: Công văn, Tờ trình, Thông báo, Giấy mời, Quyết định, Quy chế kèm QĐ, Quy định, Kế hoạch, Nghị quyết, Văn bản của đơn vị trực thuộc Giám đốc, Văn bản của đơn vị cấp phòng/ban.',
+    new:'10 mẫu: Công văn, Tờ trình, Thông báo, Giấy mời, Quyết định, Văn bản kèm theo QĐ (mẫu 5.1 riêng), Quy chế, Quy định, Kế hoạch, Báo cáo — không còn mẫu Nghị quyết và 2 mẫu theo cấp đơn vị; Giấy mời thêm dòng thông tin liên hệ (cỡ 10); Báo cáo minh hoạ "TÀI LIỆU HỘI NGHỊ" (cỡ 12).',
+    k:'mau van ban 11 10 nghi quyet don vi truc thuoc phong ban giay moi lien he bao cao tai lieu hoi nghi'},
+]},
+{ name:'Phụ lục mới và tổ chức thực hiện', items:[
+  { tag:'MỚI', t:'Sơ đồ bố trí và bảng cỡ chữ tổng hợp', s:'Phụ lục 1 (sơ đồ 15 ô) + Phụ lục 2 (bảng 15 mục) — HD488 không có',
+    old:'Chỉ có 3 phụ lục: bảng ký hiệu tên loại, bảng viết tắt đơn vị, bộ mẫu văn bản (không có sơ đồ, không có bảng cỡ chữ tổng hợp).',
+    new:'Thêm Phụ lục 1: sơ đồ bố trí 15 ô thành phần thể thức trên khổ A4 (lề 20-20-30-15); Phụ lục 2: bảng tổng hợp loại chữ, cỡ chữ, kiểu chữ, minh hoạ cho 15 nhóm thành phần.',
+    k:'so do bo tri phu luc 1 2 bang co chu kieu chu 15 o 15 muc a4'},
+  { tag:'MỚI', t:'Điều khoản hiệu lực và thay thế', s:'HD986 tuyên bố thay thế HD488, quy tắc áp dụng bản mới',
+    old:'Tổ chức thực hiện chỉ gồm: thủ trưởng đơn vị trực thuộc thực hiện; Văn phòng Học viện hướng dẫn, kiểm tra, theo dõi (không có điều khoản hiệu lực).',
+    new:'Hiệu lực từ ngày ký, thay thế Hướng dẫn số 488-HD/HVCTQG (18/10/2018); quy định dẫn chiếu có sửa đổi, bổ sung, thay thế thì áp dụng bản mới; Văn phòng Học viện thêm nhiệm vụ đề xuất sửa đổi, bổ sung hoặc thay thế.',
+    k:'hieu luc ngay ky thay the 488 dan chieu ap dung ban moi de xuat sua doi'},
+]},
+];
+
+const main=document.getElementById('main');
+const qEl=document.getElementById('q');
+const clearEl=document.getElementById('clear');
+let query='';
+
+function norm(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');}
+function hl(text,q){
+  if(!q) return text;
+  const nq=norm(q), nt=norm(text);
+  const i=nt.indexOf(nq);
+  if(i<0) return text;
+  return text.slice(0,i)+'<mark>'+text.slice(i,i+q.length)+'</mark>'+text.slice(i+q.length);
+}
+
+function render(){
+  const nq=norm(query.trim());
+  let html='<div class="meta">'+META.map((m,i)=>'<span class="chip'+(i?' gray':'')+'">'+m+'</span>').join('')+'</div>';
+  html+='<div class="legend"><span><i class="dot moi"></i>MỚI — điểm bổ sung trong HD986</span><span><i class="dot khac"></i>KHÁC — thay đổi so với HD488</span></div>';
+  let shown=0;
+  GROUPS.forEach(g=>{
+    const matched=g.items.filter(it=>{
+      if(!nq) return true;
+      return norm(it.t+' '+it.s+' '+it.old+' '+it.new+' '+(it.note||'')+' '+(it.k||'')).includes(nq);
+    });
+    if(!matched.length) return;
+    html+='<div class="grouphead">'+g.name+'</div>';
+    matched.forEach(it=>{
+      shown++;
+      const open=nq?' open':'';
+      const cls=it.tag==='MỚI'?'moi':'khac';
+      html+='<div class="card'+open+'">'
+        +'<button class="head" type="button">'
+        +'<span class="badge '+cls+'">'+it.tag+'</span>'
+        +'<span class="htext"><span class="t">'+hl(it.t,query.trim())+'</span>'
+        +'<span class="s">'+hl(it.s,query.trim())+'</span></span>'
+        +'<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>'
+        +'</button>'
+        +'<div class="body"><div class="cmp">'
+        +'<div class="row old"><span class="lbl">HD 488 — 2018 (cũ)</span>'+it.old+'</div>'
+        +'<div class="row new"><span class="lbl">HD 986 — 2026 (mới)</span>'+it.new+'</div>'
+        +'</div>'
+        +(it.note?'<div class="note"><b>Lưu ý:</b> '+it.note+'</div>':'')
+        +'</div></div>';
+    });
+  });
+  if(!shown) html+='<div class="empty"><b>Không tìm thấy</b>Thử từ khoá khác, ví dụ: <i>năm dương lịch, ký số, QĐi, giáp lai</i>.</div>';
+  main.innerHTML=html;
+  main.querySelectorAll('.card').forEach(c=>{
+    c.querySelector('.head').addEventListener('click',()=>c.classList.toggle('open'));
+  });
+}
+qEl.addEventListener('input',()=>{query=qEl.value;clearEl.classList.toggle('show',!!query);render();});
+clearEl.addEventListener('click',()=>{query='';qEl.value='';clearEl.classList.remove('show');qEl.focus();render();});
+render();
+</script>
+
+<div class="wrap"><div class="footer">
+  Đối chiếu Hướng dẫn 488-HD/HVCTQG (18/10/2018) và Hướng dẫn 986-HD/HVCTQGHCM (14/7/2026).<br>
+  Tra cứu toàn văn: <a href="https://github.com/vuducnam/tra-cuu-hd986">tra-cuu-hd986</a> · <a href="https://github.com/vuducnam/tra-cuu-hd488">tra-cuu-hd488</a><br>
+  Bản tóm tắt điểm khác — khi soạn thảo chính thức cần đối chiếu nguyên văn cả hai hướng dẫn.
+</div></div>
+
+</body>
+</html>
